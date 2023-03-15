@@ -1,0 +1,13 @@
+steps:
+- name: 'gcr.io/${_PROJECT_ID}/packer'
+  args:
+  - build
+  - -var
+  - source_image_name=ubuntu-minimal-1804-bionic-v20230308
+  - -var
+  - project_id=${_PROJECT_ID}
+  - -var
+  - image_name=dev-vm-image
+  - -var
+  - image_zone=${_ZONE}
+  - cloudbuild/packer.json

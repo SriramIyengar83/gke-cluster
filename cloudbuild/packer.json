@@ -1,0 +1,20 @@
+
+{
+    "builders": [
+{
+"type": "googlecompute",
+"project_id": "{{ user `project_id` }}",
+"source_image": "{{ user `source_image_name` }}",
+"ssh_username": "packer",
+"zone": "{{ user `image_zone` }}",
+"image_name" : "{{ user `image_name`}}"
+
+}
+],
+"provisioners": [
+{
+"script": "cloudbuild/utility.sh",
+"type": "shell"
+}
+]
+}
